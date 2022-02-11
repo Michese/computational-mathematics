@@ -9,7 +9,9 @@ export default defineConfig({
   plugins: [vue(), vueJsx()],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '~bootstrap': 'bootstrap',
     }
-  }
+  },
+  css: { loaderOptions: { sass: { additionalData: `@import "./src/assets/style.scss"; ` } } }
 })
