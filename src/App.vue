@@ -1,9 +1,15 @@
-<script setup>
-</script>
-
 <template>
-<h1>Hello, world!</h1>
+  <cm-main />
 </template>
+
+<script>
+import CmMain from "@/components/cmMain/CmMain.vue";
+
+export default {
+  name: 'App',
+  components: { CmMain }
+}
+</script>
 
 <style lang="scss">
 @import "./assets/style.scss";
