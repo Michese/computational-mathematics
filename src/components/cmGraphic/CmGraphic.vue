@@ -6,7 +6,7 @@
 import { AgChartsVue } from 'ag-charts-vue3';
 export default {
   name: "CmGraphic",
-  props: [ 'function', 'ckra', 'lkra', 'pkra' ],
+  props: [ 'function', 'ckra', 'lkra', 'pkra', 'ckra2' ],
   components: {  'ag-charts-vue': AgChartsVue, },
   computed: {
     options() {
@@ -18,10 +18,10 @@ export default {
             xKey: 'x',
             yKey: 'y',
             yName: 'ƒ(x)',
-            stroke: '#ac4ac2',
+            stroke: '#C4E7D4',
             marker: {
-              fill: '#ac4ac2',
-              stroke: '#77118c',
+              fill: '#C4E7D4',
+              stroke: '#C4E7D4',
             },
           },
           {
@@ -29,10 +29,10 @@ export default {
             xKey: 'x',
             yKey: 'CKRA',
             yName: 'ЦКРА',
-            stroke: '#8bc24a',
+            stroke: '#363030',
             marker: {
-              fill: '#8bc24a',
-              stroke: '#658d36',
+              fill: '#363030',
+              stroke: '#363030',
             },
           },
           {
@@ -40,10 +40,10 @@ export default {
             xKey: 'x',
             yKey: 'LKRA',
             yName: 'ЛКРА',
-            stroke: '#14e6f3',
+            stroke: '#998DA0',
             marker: {
-              fill: '#14e6f3',
-              stroke: '#027980',
+              fill: '#998DA0',
+              stroke: '#998DA0',
             },
           },
           {
@@ -51,10 +51,21 @@ export default {
             xKey: 'x',
             yKey: 'PKRA',
             yName: 'ПКРА',
-            stroke: '#c28a4a',
+            stroke: '#63585E',
             marker: {
-              fill: '#c28a4a',
-              stroke: '#c06b02',
+              fill: '#63585E',
+              stroke: '#63585E',
+            },
+          },
+          {
+            data: this.ckra2,
+            xKey: 'x',
+            yKey: 'CKRA2',
+            yName: 'ЦКРА 2',
+            stroke: '#568A6E',
+            marker: {
+              fill: '#568A6E',
+              stroke: '#568A6E',
             },
           },
         ],
