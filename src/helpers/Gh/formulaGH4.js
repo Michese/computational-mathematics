@@ -1,5 +1,5 @@
-import {M4} from "./M4";
+import {formulaGH4_r1, formulaGH4_r2} from ".";
 
 export function formulaGH4(machineEpsilon, step) {
-    return M4 * step**2 / 12 + 4 * machineEpsilon / step ** 2;
+    return formulaGH4_r1(step) + formulaGH4_r2(machineEpsilon, step);
 }

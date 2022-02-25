@@ -26,7 +26,11 @@
     <input v-model="epsilon" type="number" class="cm-main__input form-control" :disabled="isApply">
   </span>
 
-  <button class="cm-main__apply btn btn-primary" @click="apply" :disabled="disabledApply">Ок</button>
+  <div class="d-flex">
+    <button class="cm-main__apply btn btn-primary me-1" @click="apply" :disabled="disabledApply">Применить</button>
+    <button class="cm-main__apply btn btn-danger" @click="reset" :disabled="disabledReset">Отменить</button>
+  </div>
+
 
   <template v-if="isApply">
     <h4 class="cm-main__title">ЦКРА</h4>
@@ -123,6 +127,9 @@ export default {
     disabledApply() {
       return this.step === null;
     },
+    disabledReset() {
+      return !this.isApply;
+    },
     machineEpsilon() {
       return 2 ** (-machineEpsilon.mantissa);
     },
@@ -134,7 +141,7 @@ export default {
       return resultKRA(formulaCKRA, this.step, this.epsilon);
     },
     rungeCKRA() {
-      return this.resultLKRA.R;
+      return this.resultCKRA.R;
     },
     numberOfSplitPointsCKRA() {
       return this.resultCKRA.kra.length;
@@ -282,6 +289,9 @@ export default {
   methods: {
     apply() {
       this.isApply = true;
+    },
+    reset() {
+      this.isApply = false;
     },
   }
 }
